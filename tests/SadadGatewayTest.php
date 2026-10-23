@@ -102,6 +102,7 @@ final class SadadGatewayTest extends TestCase
             'terminalKey' => 'MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWY=',
         ]);
         $method = new ReflectionMethod(SadadGateway::class, 'sign');
+        $method->setAccessible(true);
 
         $this->assertSame('NG3BJGK7R6ZPrcTfkW9FFATWF8dxL98A', $method->invoke($gateway, 'TERMINAL;ORDER;100000'));
     }
